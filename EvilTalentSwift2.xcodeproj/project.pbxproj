@@ -13,6 +13,7 @@
 		CFBDBB801B8314E30076C6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFBDBB7F1B8314E30076C6A3 /* Assets.xcassets */; };
 		CFBDBB831B8314E30076C6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBDBB811B8314E30076C6A3 /* LaunchScreen.storyboard */; };
 		CFBDBBA01B8315500076C6A3 /* EvilDude.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBDBB9F1B8315500076C6A3 /* EvilDude.swift */; };
+		CFBDBBA31B83162F0076C6A3 /* EvilDudeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBDBBA21B83162F0076C6A3 /* EvilDudeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,8 @@
 		CFBDBB891B8314E30076C6A3 /* EvilTalentSwift2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EvilTalentSwift2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBDBB8F1B8314E30076C6A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFBDBB9F1B8315500076C6A3 /* EvilDude.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvilDude.swift; sourceTree = "<group>"; };
+		CFBDBBA11B83162E0076C6A3 /* EvilTalentSwift2Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EvilTalentSwift2Tests-Bridging-Header.h"; sourceTree = "<group>"; };
+		CFBDBBA21B83162F0076C6A3 /* EvilDudeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvilDudeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,7 @@
 		CFBDBB9C1B8315130076C6A3 /* OtherSources */ = {
 			isa = PBXGroup;
 			children = (
+				CFBDBBA11B83162E0076C6A3 /* EvilTalentSwift2Tests-Bridging-Header.h */,
 				CFBDBB8F1B8314E30076C6A3 /* Info.plist */,
 			);
 			name = OtherSources;
@@ -148,6 +152,7 @@
 		CFBDBB9E1B83152A0076C6A3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CFBDBBA21B83162F0076C6A3 /* EvilDudeTests.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 		CFBDBB6D1B8314E30076C6A3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = powwau;
 				TargetAttributes = {
@@ -262,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFBDBBA31B83162F0076C6A3 /* EvilDudeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,10 +409,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = EvilTalentSwift2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.powwau.EvilTalentSwift2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EvilTalentSwift2Tests/EvilTalentSwift2Tests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EvilTalentSwift2.app/EvilTalentSwift2";
 			};
 			name = Debug;
@@ -414,10 +424,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = EvilTalentSwift2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.powwau.EvilTalentSwift2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EvilTalentSwift2Tests/EvilTalentSwift2Tests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EvilTalentSwift2.app/EvilTalentSwift2";
 			};
 			name = Release;
