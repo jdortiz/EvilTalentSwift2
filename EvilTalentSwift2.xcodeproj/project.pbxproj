@@ -14,6 +14,8 @@
 		CFBDBB831B8314E30076C6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBDBB811B8314E30076C6A3 /* LaunchScreen.storyboard */; };
 		CFBDBBA01B8315500076C6A3 /* EvilDude.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBDBB9F1B8315500076C6A3 /* EvilDude.swift */; };
 		CFBDBBA31B83162F0076C6A3 /* EvilDudeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBDBBA21B83162F0076C6A3 /* EvilDudeTests.swift */; };
+		CFBDBBA51B8318DB0076C6A3 /* EvilTalentAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBDBBA41B8318DB0076C6A3 /* EvilTalentAPIClient.swift */; };
+		CFBDBBA71B8319640076C6A3 /* EvilTalentAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBDBBA61B8319640076C6A3 /* EvilTalentAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		CFBDBB9F1B8315500076C6A3 /* EvilDude.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvilDude.swift; sourceTree = "<group>"; };
 		CFBDBBA11B83162E0076C6A3 /* EvilTalentSwift2Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EvilTalentSwift2Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		CFBDBBA21B83162F0076C6A3 /* EvilDudeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvilDudeTests.swift; sourceTree = "<group>"; };
+		CFBDBBA41B8318DB0076C6A3 /* EvilTalentAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvilTalentAPIClient.swift; sourceTree = "<group>"; };
+		CFBDBBA61B8319640076C6A3 /* EvilTalentAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvilTalentAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				CFBDBB9F1B8315500076C6A3 /* EvilDude.swift */,
+				CFBDBBA41B8318DB0076C6A3 /* EvilTalentAPIClient.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				CFBDBBA21B83162F0076C6A3 /* EvilDudeTests.swift */,
+				CFBDBBA61B8319640076C6A3 /* EvilTalentAPIClient.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFBDBB7B1B8314E30076C6A3 /* ViewController.swift in Sources */,
+				CFBDBBA51B8318DB0076C6A3 /* EvilTalentAPIClient.swift in Sources */,
 				CFBDBB791B8314E30076C6A3 /* AppDelegate.swift in Sources */,
 				CFBDBBA01B8315500076C6A3 /* EvilDude.swift in Sources */,
 			);
@@ -269,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFBDBBA31B83162F0076C6A3 /* EvilDudeTests.swift in Sources */,
+				CFBDBBA71B8319640076C6A3 /* EvilTalentAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
