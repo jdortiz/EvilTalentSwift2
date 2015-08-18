@@ -16,6 +16,7 @@ class EvilTalentAPIClient {
     
     // MARK: - Properties
     
+    lazy var sharedSession = NSURLSession.sharedSession()
     var completion: ((jsonData: [NSDictionary]) -> Void)?
 
 
@@ -23,22 +24,33 @@ class EvilTalentAPIClient {
         guard let URL = NSURL(string: endPoint) else {
             return
         }
-        let task = NSURLSession.sharedSession().dataTaskWithURL(URL, completionHandler: parseServerData)
+        let task = sharedSession.dataTaskWithURL(URL, completionHandler: parseServerData)
         task.resume()
     }
 
     
     func parseServerData(data: NSData?, response: NSURLResponse?, error: NSError?) {
-        guard error == nil && data != nil  else {
-            print("Failed to download data from the site.", appendNewline: true)
+        guard error == nil else {
+            print("ERROR: Unable to connect to server: \(error!.localizedDescription)", appendNewline: true)
             return
         }
+        
+        guard let data = data else {
+            // Obtain information from response
+            print("Failed to download data from server.", appendNewline: true)
+            return
+        }
+        
         do {
-            if case let dictionaries as [NSDictionary] = try NSJSONSerialization.JSONObjectWithData(data!, options: []) {
-                completion?(jsonData: dictionaries)
-            }
+            let dictionaries = try parseJSONData(data, options: []) as! [NSDictionary]
+            completion?(jsonData: dictionaries)
         } catch {
             print("Unexpected data format provided by server.", appendNewLine: true)
         }
+    }
+    
+    
+    func parseJSONData(data: NSData, options opt: NSJSONReadingOptions) throws -> AnyObject {
+        return try NSJSONSerialization.JSONObjectWithData(data, options: opt)
     }
 }

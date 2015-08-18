@@ -50,10 +50,42 @@ class EvilTalentAPIClientTests: XCTestCase {
         XCTAssertTrue(completionInvoked, "Completion closure must not be called with proper JSON data.")
     }
     
+    
+    func testParseServerDataExitsIfCalledWithError() {
+        let error = NSError(domain: "Test", code: 0, userInfo: nil)
+        let brokenJsonData = "{".dataUsingEncoding(NSUTF8StringEncoding)
+        let mockedSut = MockEvilTalentAPIClient()
+        
+        mockedSut.parseServerData(brokenJsonData, response: nil, error: error)
+        
+        XCTAssertFalse(mockedSut.parseJSONDataInvoked, "JSON parser shouldn't be invoked if method is invoked with error.")
+    }
+    
+    
+    func testParseServerDataExitsIfCalledWithoutData() {
+        let mockedSut = MockEvilTalentAPIClient()
+        
+        mockedSut.parseServerData(nil, response: nil, error: nil)
+        
+        XCTAssertFalse(mockedSut.parseJSONDataInvoked, "JSON parser shouldn't be invoked if method is invoked with error.")
+    }
+
 
     // MARK: - Auxiliary methods
     
     func fakeCompletion(jsonData: [NSDictionary]) -> Void {
         completionInvoked = true
+    }
+}
+
+
+// MARK: - Mock class
+
+class MockEvilTalentAPIClient: EvilTalentAPIClient {
+    var parseJSONDataInvoked = false
+    
+    override func parseJSONData(data: NSData, options opt: NSJSONReadingOptions) throws -> AnyObject {
+        parseJSONDataInvoked = true
+        return []
     }
 }
