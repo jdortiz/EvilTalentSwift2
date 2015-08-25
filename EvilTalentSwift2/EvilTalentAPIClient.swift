@@ -31,13 +31,13 @@ class EvilTalentAPIClient {
     
     func parseServerData(data: NSData?, response: NSURLResponse?, error: NSError?) {
         guard error == nil else {
-            print("ERROR: Unable to connect to server: \(error!.localizedDescription)", appendNewline: true)
+            print("ERROR: Unable to connect to server: \(error!.localizedDescription)")
             return
         }
         
         guard let data = data else {
             // Obtain information from response
-            print("Failed to download data from server.", appendNewline: true)
+            print("Failed to download data from server.")
             return
         }
         
@@ -45,7 +45,7 @@ class EvilTalentAPIClient {
             let dictionaries = try parseJSONData(data, options: []) as! [NSDictionary]
             completion?(jsonData: dictionaries)
         } catch {
-            print("Unexpected data format provided by server.", appendNewLine: true)
+            print("Unexpected data format provided by server.")
         }
     }
     
