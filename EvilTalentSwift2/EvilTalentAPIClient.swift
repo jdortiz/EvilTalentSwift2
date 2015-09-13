@@ -24,6 +24,7 @@ class EvilTalentAPIClient {
         guard let URL = NSURL(string: endPoint) else {
             return
         }
+        self.completion = completion
         let task = sharedSession.dataTaskWithURL(URL, completionHandler: parseServerData)
         task.resume()
     }
